@@ -1,0 +1,18 @@
+﻿@model List<Question>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<form asp-controller="Exam" asp-action="check" method="post">
+    @for(int i = 0 ; i<Model.Count;i++){
+    <div class="mb-3">
+            <h2>@Model[i].Head</h2>
+            <h3>@Model[i].Body</h3>
+            <input class="form-control">
+        @*<span class="text-danger" asp-validation-for="Name"></span>*@
+   </div>
+    }
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

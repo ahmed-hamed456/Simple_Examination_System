@@ -1,0 +1,45 @@
+﻿@model List<Question>
+@{
+    ViewData["Title"] = "GetById";
+    int i = 1;
+}
+
+<h1>Questions</h1>
+
+<a asp-controller="instractor" asp-action="AddQuestions" class="btn btn-dark">Add_New_Question</a>
+<hr />
+<table class="table table-light table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Head</th>
+            <th scope="col">Body</th>
+            <th scope="col">Answer</th>
+            <th scope="col">Controls</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@(i++)</th>
+                <td>@item.Head</td>
+                <td>@item.Body</td>
+                <td>@item.Answer</td>
+
+                <td>
+                    @*<a href="/employee/getbyid/@item.ID"><i class="fa-solid fa-circle-info"></i></a>
+                -
+                <a href="/employee/EditForm/@item.ID"><i class="fa-solid fa-pen-to-square"></i></a>
+                -
+                <a href="/employee/delete/@item.ID"><i class="fa-solid fa-trash"></i></a>*@
+
+                    <a href="/instractor/Update/@item.ID">Update</a>
+                    -
+                    <a href="/instractor/delete/@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

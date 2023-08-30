@@ -1,0 +1,23 @@
+﻿@model Question
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update_Question</h1>
+
+<form  method="post">
+    <input type="number" id="ID" name="ID" value="@Model.ID" hidden />
+    <div class="mb-3">
+        <label asp-for="Head" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="Head" value="@Model.Head">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Body" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="Body" value="@Model.Body">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Answer" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="Answer" value="@Model.Answer">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

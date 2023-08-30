@@ -1,0 +1,52 @@
+﻿@model List<Student>
+@{
+    ViewData["Title"] = "GetAll";
+    int i = 1;
+}
+
+<h1>Students</h1>
+
+<a asp-controller="student" asp-action="Add" class="btn btn-dark">Add_New_Student</a>
+<hr />
+<form asp-controller="Student" asp-action="IsActive">
+<table class="table table-light table-striped">
+    <thead>
+        <tr>
+            <th scope="col"> </th>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Email</th>
+            @*<th scope="col">Grade</th>*@
+            <th scope="col">Controls</th> 
+        </tr>
+    </thead>
+    <tbody>
+        @for(int x = 0;x<Model.Count;x++)
+        {
+                <tr>
+                    <td>
+                        <input class="form-check-input" type="checkbox" asp-for="@Model[x].IsMine">
+                    </td>
+                    <th scope="row">@(i++)</th>
+                    <td>@Model[x].Name</td>
+                    <td>@Model[x].Age</td>
+                    <td>@Model[x].Email</td>
+                    @*<td>@item.Grade</td>*@
+                    <td>
+
+                        <a href="/student/Update/@Model[x].ID">Update</a>
+                        -
+                        <a href="/student/delete/@Model[x].ID">Delete</a>
+                    </td>               
+                </tr>
+        }
+    </tbody>
+</table>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+@*<a href="/employee/getbyid/@item.ID"><i class="fa-solid fa-circle-info"></i></a>
+                -
+                <a href="/employee/EditForm/@item.ID"><i class="fa-solid fa-pen-to-square"></i></a>
+                -
+                <a href="/employee/delete/@item.ID"><i class="fa-solid fa-trash"></i></a>*@

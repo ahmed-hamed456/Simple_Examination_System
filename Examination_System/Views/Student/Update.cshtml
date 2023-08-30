@@ -1,0 +1,27 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update_Student_Data</h1>
+
+<form  method="post">
+    <input type="number" id="ID" name="ID" value="@Model.ID" hidden />
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="Name" value="@Model.Name">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Age" class="form-label"></label>
+        <input type="number" class="form-control" asp-for="Age" value="@Model.Age">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input type="email" class="form-control" asp-for="Email" value="@Model.Email">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Password" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="Password" value="@Model.Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

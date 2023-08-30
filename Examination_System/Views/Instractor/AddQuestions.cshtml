@@ -1,0 +1,25 @@
+﻿@model Question
+@{
+    ViewData["Title"] = "AddQuestions";
+}
+
+<h1>Add Questions</h1>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Head" class="form-label"></label>
+        <input asp-for="Head" class="form-control">
+        <span class="text-danger" asp-validation-for="Head"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Body" class="form-label"></label>
+        <input asp-for="Body" class="form-control">
+        <span class="text-danger" asp-validation-for="Body"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Answer" class="form-label"></label>
+        <input asp-for="Answer" class="form-control">
+        <span class ="text-danger" asp-validation-for="Answer"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
